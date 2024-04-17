@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center mt-5">Student Dashboard</h1>
+        <div class="row mt-5">
+            <div class="col-md-8 mx-auto">
+                <h2>Welcome, {{ username }}</h2>
+                <div class="mb-3">
+                    <a href="{{ url_for('logout') }}" class="btn btn-danger">Logout</a>
+                </div>
+                <h3>All Courses</h3>
+                <ul class="list-group">
+                    {% for course in courses %}
+                        <li class="list-group-item">{{ course.title }} - {{ course.description }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
